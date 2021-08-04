@@ -1,7 +1,8 @@
 import React from "react" ; 
 import {Wrapper} from "./Language.styles" ; 
-
-import {Bar} from "react-chartjs-2" ; 
+import {Bar , Chart} from "react-chartjs-2" ; 
+import zoomPlugin from 'chartjs-plugin-zoom';
+Chart.register(zoomPlugin);
 const Language = ({data}) => {
     return <Wrapper>
     <Bar
@@ -36,11 +37,26 @@ const Language = ({data}) => {
 
     }}
     options = { {
+    responsive: true,
+    maintainAspectRatio: false,
     indexAxis: 'y',
-    scales : {
-        xAxes : [{
-            barPercentage : 0.4
-        }]
+    plugins : {
+        zoom : {
+            pan :{
+                enabled : true , 
+                mode : "y" , 
+                speed : 10 
+            } , 
+            zoom: {
+            wheel: {
+                enabled: true,
+            },
+            pinch: {
+                enabled: true
+            },
+            mode: 'y',
+        }
+      }
     }
   } } 
     />

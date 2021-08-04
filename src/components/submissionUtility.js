@@ -11,8 +11,9 @@ export const submissionHandler = ( submissions ) => {
     } ; 
     let tag_info = {} ; 
     let rating = {} ; 
-    let languages = {} ; 
-
+    let languages = {} ;
+    let problem_index = {} ;  
+    let index = [] ; 
     if (submissions ){
     submissions.forEach( ( submission ) => {
         if ( verdict.hasOwnProperty( submission.verdict ) ) {
@@ -38,9 +39,23 @@ export const submissionHandler = ( submissions ) => {
             }else{
                 languages[submission.programmingLanguage] = 1 ; 
             }
+            if( problem_index.hasOwnProperty( submission.problem.index )){
+                problem_index[ submission.problem.index] += 1 ; 
+            }else{
+                problem_index[ submission.problem.index] = 1 ;  
+            }
 
         }
     }) ;} 
+    for (const key in problem_index){
+        index.push(key) ; 
+    }
+    index.sort() ;
+    index.forEach( index_of_problem => {
+        const temp = problem_index[index_of_problem] ; 
+        delete problem_index[index_of_problem] ; 
+        problem_index[index_of_problem] = temp ; 
+    })
     Object.keys(tag_info).forEach( oldKey =>{
         tag_info[oldKey + "|" + tag_info[oldKey]] = tag_info[oldKey] ;
         delete tag_info[oldKey] ; 
@@ -51,6 +66,6 @@ export const submissionHandler = ( submissions ) => {
         delete verdict[oldKey] ; 
     }
     ) ; 
-    return { verdict , tag_info , rating , languages } ; 
+    return { verdict , tag_info , rating , languages , problem_index } ; 
         
 }

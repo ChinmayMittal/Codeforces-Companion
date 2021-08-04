@@ -36,6 +36,7 @@ function Home(){
          setVerdictData(temp.verdict) ; 
         //  console.log(verdictData) ; 
          console.log(temp.languages) ; 
+         console.log(submissionInfo.problem_index) ; 
         //  console.log(submissionInfo) ; 
       }
  
@@ -52,6 +53,7 @@ function Home(){
             { loading && <Spinner/>}
             { validHandle && handle && state && Array.isArray(state.result) && <User user = {state.result[0]}/>}
             { validHandle  && submissionInfo && <ProblemRating ratingData={ratingData} />}
+            { validHandle  && submissionInfo && <ProblemRating ratingData={submissionInfo.problem_index} />}
             { validHandle && submissionInfo && <Verdict verdictData={submissionInfo.verdict} />}
             { validHandle && submissionInfo && <Tags tagsData={submissionInfo.tag_info} />}
             { validHandle && submissionInfo && <Language data={submissionInfo.languages} />}

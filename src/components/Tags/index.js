@@ -30,7 +30,7 @@ const Tags = ({tagsData}) => {
             plugins : {
             legend : {
             display : true , 
-            align : 'center' , 
+            align : 'start' , 
             position : 'right'
             }
         }
