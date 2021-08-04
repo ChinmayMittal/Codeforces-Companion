@@ -39,10 +39,10 @@ export const submissionHandler = ( submissions ) => {
             }else{
                 languages[submission.programmingLanguage] = 1 ; 
             }
-            if( problem_index.hasOwnProperty( submission.problem.index )){
-                problem_index[ submission.problem.index] += 1 ; 
+            if( problem_index.hasOwnProperty( submission.problem.index.replace(/\d+$/, '') )){
+                problem_index[ submission.problem.index.replace(/\d+$/, '')] += 1 ; 
             }else{
-                problem_index[ submission.problem.index] = 1 ;  
+                problem_index[ submission.problem.index.replace(/\d+$/, '')] = 1 ;  
             }
 
         }

@@ -26,8 +26,8 @@ const Verdict = ({verdictData}) => {
             }]
 }}   
         options = {{
-            responsive: false ,
-            maintainAspectRatio: true ,
+            responsive: true  ,
+            maintainAspectRatio: false,
             plugins : {
                 legend : {
                 display : true ,

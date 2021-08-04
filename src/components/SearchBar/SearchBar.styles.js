@@ -5,10 +5,12 @@ display : flex ;
 align-items : center ; 
 height : 100px ; 
 padding : 0 20px ;
+/* background-color : white ;  */
  
 ` ; 
 
 export const Content = styled.div`
+background : white ; 
 margin : 0 auto ; 
 border-radius : 40px ; 
 border : 3px solid black ; 
@@ -28,6 +30,7 @@ input{
     padding-left : 60px ; 
     padding-top : 5px ;   
     background : transparent ; 
+    /* background-color : white ;  */
     :focus{
         outline : none ; 
     }

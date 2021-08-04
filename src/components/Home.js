@@ -36,7 +36,7 @@ function Home(){
          setVerdictData(temp.verdict) ; 
         //  console.log(verdictData) ; 
          console.log(temp.languages) ; 
-         console.log(submissionInfo.problem_index) ; 
+        //  console.log(submissionInfo.problem_index) ; 
         //  console.log(submissionInfo) ; 
       }
  

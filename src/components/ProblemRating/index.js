@@ -5,6 +5,7 @@ import { Chart } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
 Chart.register(zoomPlugin);
 const ProblemRating = ({ ratingData}) => {
+
     if(ratingData){
     return <Wrapper><Bar 
     data = {{
@@ -20,8 +21,8 @@ const ProblemRating = ({ ratingData}) => {
 
     }}
     options =  {{
-    responsive: true,
-    maintainAspectRatio: false,
+    responsive: true ,
+    maintainAspectRatio: false ,
     plugins : {
         zoom : {
             pan :{
