@@ -6,8 +6,11 @@ height : 400px;
 margin : 20px auto ;
 position : relative ;
 background : white ; 
-border : 1px solid black ; 
- 
+border :3px solid black ; 
+box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.62);
+-webkit-box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.62);
+-moz-box-shadow: 10px 10px 44px 0px rgba(0,0,0,0.62);
+ border-radius : 5px ; 
 .canvas{
     position : absolute ;
 }
