@@ -7,6 +7,7 @@ import ProblemRating from "./ProblemRating"
 import {fetchUserInfo , fetchSubmissionInfo , fetchContestInfo } from "../API.js" ; 
 import { submissionHandler} from "./submissionUtility" ; 
 import { contestHandler} from "./contestUtility" ; 
+import {dataHandle} from "./Verdict/dataUtility" ; 
 import Tags from "./Tags" ; 
 import Verdict from "./Verdict" ; 
 import Spinner from "./Spinner" ; 
@@ -30,15 +31,15 @@ function Home(){
          setValidHandle(true) ; 
          setState(data) ; 
          const submissionData = await fetchSubmissionInfo(handle) ; 
-         //console.log(submissionData) ; 
          const temp = submissionHandler(submissionData.result) ;
          setSubmissionInfo(temp) ;  
          setRatingData(temp.rating) ;  
-         setVerdictData(temp.verdict) ; 
+         setVerdictData(dataHandle(temp.verdict)) ; 
+        //  setVerdictData(temp.verdict) ; 
          let contestData = await fetchContestInfo(handle)  ; 
          contestData = contestHandler(contestData.result) ; 
-         console.log(contestData)  ;
-        //  console.log(verdictData) ; 
+        //  console.log(verdictData)  ;
+        //  console.log(dataHandle(temp.verdict)) ; 
         //  console.log(temp.languages) ; 
         //  console.log(submissionInfo.problem_index) ; 
         //  console.log(submissionInfo) ; 
@@ -58,7 +59,7 @@ function Home(){
             { validHandle && handle && state && Array.isArray(state.result) && <User user = {state.result[0]}/>}
             { validHandle  && submissionInfo && <ProblemRating ratingData={ratingData} />}
             { validHandle  && submissionInfo && <ProblemRating ratingData={submissionInfo.problem_index} />}
-            { validHandle && submissionInfo && <Verdict verdictData={submissionInfo.verdict} />}
+            { validHandle && submissionInfo && <Verdict verdictData={dataHandle(submissionInfo.verdict)} />}
             { validHandle && submissionInfo && <Tags tagsData={submissionInfo.tag_info} />}
             { validHandle && submissionInfo && <Language data={submissionInfo.languages} />}
         </>

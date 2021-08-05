@@ -4,6 +4,6 @@ export const  contestHandler = (data) => {
     data.forEach( contestData => {
         rankings.push(contestData.newRating) ; 
     }) ; 
-    console.log(data) ; 
+    // console.log(data) ; 
     return { rankings , numberOfContests} ; 
 }

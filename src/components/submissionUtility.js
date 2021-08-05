@@ -61,11 +61,11 @@ export const submissionHandler = ( submissions ) => {
         delete tag_info[oldKey] ; 
     }
     ) ; 
-    Object.keys(verdict).forEach( oldKey =>{
-        verdict[oldKey + "|" + verdict[oldKey]] = verdict[oldKey] ;
-        delete verdict[oldKey] ; 
-    }
-    ) ; 
+    // Object.keys(verdict).forEach( oldKey =>{
+    //     verdict[oldKey + "|" + verdict[oldKey]] = verdict[oldKey] ;
+    //     delete verdict[oldKey] ; 
+    // }
+    // ) ; 
     return { verdict , tag_info , rating , languages , problem_index } ; 
         
 }
