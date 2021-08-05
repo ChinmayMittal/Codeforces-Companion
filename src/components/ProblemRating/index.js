@@ -15,6 +15,7 @@ const ProblemRating = ({ ratingData}) => {
                 label : "Problem Rating" , 
                 data : Object.values(ratingData) , 
                 borderColor : ['rgba(0,0,0,0.5)'] , 
+                backgroundColor : ['rgba(0 , 0, 0 , 0.4)'] , 
                 borderWidth : 1
             }
         ]

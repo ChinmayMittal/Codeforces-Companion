@@ -4,8 +4,9 @@ import SearchBar from "./SearchBar" ;
 import NoUser from "./NoUser" ; 
 import User from "./User" ; 
 import ProblemRating from "./ProblemRating"
-import {fetchUserInfo , fetchContestInfo } from "../API.js" ; 
+import {fetchUserInfo , fetchSubmissionInfo , fetchContestInfo } from "../API.js" ; 
 import { submissionHandler} from "./submissionUtility" ; 
+import { contestHandler} from "./contestUtility" ; 
 import Tags from "./Tags" ; 
 import Verdict from "./Verdict" ; 
 import Spinner from "./Spinner" ; 
@@ -28,14 +29,17 @@ function Home(){
       }else{
          setValidHandle(true) ; 
          setState(data) ; 
-         const submissionData = await fetchContestInfo(handle) ; 
+         const submissionData = await fetchSubmissionInfo(handle) ; 
          //console.log(submissionData) ; 
          const temp = submissionHandler(submissionData.result) ;
          setSubmissionInfo(temp) ;  
          setRatingData(temp.rating) ;  
          setVerdictData(temp.verdict) ; 
+         let contestData = await fetchContestInfo(handle)  ; 
+         contestData = contestHandler(contestData.result) ; 
+         console.log(contestData)  ;
         //  console.log(verdictData) ; 
-         console.log(temp.languages) ; 
+        //  console.log(temp.languages) ; 
         //  console.log(submissionInfo.problem_index) ; 
         //  console.log(submissionInfo) ; 
       }
