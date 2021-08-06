@@ -1,4 +1,7 @@
 export const fetchUserInfo =async ( handle ) => {
+    if(handle === ''){
+        return { result : 'not found'} ; 
+    }
     const response = await fetch('https://codeforces.com/api/user.info?handles=' + handle )
     if(response.ok){
         const data = await response.json() ; 

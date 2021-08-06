@@ -9,7 +9,7 @@ const data = [
     ["8", 12],
     ["4", 5.5],
   ]; 
-const Verdict = ({verdictData}) => {
+const Verdict = ({verdictData , handle}) => {
     // console.log(verdictData) ; 
 //     const [data , setData] = useState([["Verdicts" , "Number"]]) ;
 
@@ -60,7 +60,7 @@ return <Wrapper>
             loader={<div>Loading Chart</div>}
             data={verdictData}
             options={{
-                title: 'Verdicts',
+                title: 'Verdicts of '+ handle,
                 // Just add this option
                 legend : "none" , 
                 colors :[
@@ -77,6 +77,10 @@ return <Wrapper>
 
 
                 ] , 
+                chartArea : {
+                    height : "90%" ,
+                    width : "90%"
+                } , 
                 is3D: true,
             }}
        />
