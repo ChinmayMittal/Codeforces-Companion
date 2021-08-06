@@ -4,7 +4,7 @@ import { Wrapper } from "./ProblemRating.styles" ;
 import { Chart } from 'chart.js';
 import zoomPlugin from 'chartjs-plugin-zoom';
 Chart.register(zoomPlugin);
-const ProblemRating = ({ ratingData}) => {
+const ProblemRating = ({ ratingData , colour}) => {
 
     if(ratingData){
     return <Wrapper><Bar 
@@ -15,7 +15,7 @@ const ProblemRating = ({ ratingData}) => {
                 label : "Problem Rating" , 
                 data : Object.values(ratingData) , 
                 borderColor : ['rgba(0,0,0,0.5)'] , 
-                backgroundColor : ['rgba(0 , 0, 0 , 0.4)'] , 
+                backgroundColor : [colour] , 
                 borderWidth : 1
             }
         ]

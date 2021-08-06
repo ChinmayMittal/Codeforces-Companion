@@ -77,15 +77,12 @@ return <Wrapper>
                     '#d22d77',
                     '#cdd22d',
                     '#2dd0d2',
-                    '#2dd23d',
                     '#d22d2d' , 
                     '#f4c725' , 
+                    '#2dd23d',
                     '#990033' , 
-                    '#0000ff' , 
-                    '#ffcc00' , 
-                    '#000000'
-
-
+                    '#c203fc' , 
+                    '#03bafc'
                 ] , 
                 chartArea : {
                     height : "90%" ,

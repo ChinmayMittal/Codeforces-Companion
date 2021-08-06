@@ -8,11 +8,13 @@ import {fetchUserInfo , fetchSubmissionInfo , fetchContestInfo } from "../API.js
 import { submissionHandler} from "./submissionUtility" ; 
 import { contestHandler} from "./contestUtility" ; 
 import {dataHandle} from "./Verdict/dataUtility" ; 
+import colourUtility from "./colourUtility";
 import Tags from "./Tags" ; 
 import Verdict from "./Verdict" ; 
 import Spinner from "./Spinner" ; 
 import Language from "./Language" ; 
 import {InfoWrapper} from "./Home.styles"
+
 function Home(){
     const [ handle , setHandle ] = useState("") ; 
     const [ state , setState ] = useState() ;
@@ -58,8 +60,8 @@ function Home(){
             { !validHandle && handle && !loading&&<NoUser />}
             { loading && <Spinner/>}
             { validHandle && handle && state && Array.isArray(state.result) && <User user = {state.result[0]}/>}
-            { validHandle  && submissionInfo && <ProblemRating ratingData={ratingData} />}
-            { validHandle  && submissionInfo && <ProblemRating ratingData={submissionInfo.problem_index} />}
+            { validHandle  && submissionInfo && <ProblemRating ratingData={ratingData} colour = {colourUtility(state.result[0].rank)} />}
+            { validHandle  && submissionInfo && <ProblemRating ratingData={submissionInfo.problem_index} colour = {colourUtility(state.result[0].rank)}/>}
             <InfoWrapper>
             { validHandle && submissionInfo && <Verdict verdictData={dataHandle(submissionInfo.verdict , "Verdict" , "Number")} handle={handle}/>}
             { validHandle && submissionInfo && <Language data={dataHandle(submissionInfo.languages , "Languages" , "Number")} handle={handle}/>}

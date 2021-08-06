@@ -73,9 +73,7 @@ return <Wrapper>
                     '#990033' , 
                     '#0000ff' , 
                     '#ffcc00' , 
-                    '#000000'
-
-
+                    '#03bafc'
                 ] , 
                 chartArea : {
                     height : "90%" ,
