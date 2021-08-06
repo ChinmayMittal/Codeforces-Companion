@@ -57,7 +57,7 @@ export const submissionHandler = ( submissions ) => {
         problem_index[index_of_problem] = temp ; 
     })
     Object.keys(tag_info).forEach( oldKey =>{
-        tag_info[oldKey + "|" + tag_info[oldKey]] = tag_info[oldKey] ;
+        tag_info[oldKey + ":" + tag_info[oldKey]] = tag_info[oldKey] ;
         delete tag_info[oldKey] ; 
     }
     ) ; 

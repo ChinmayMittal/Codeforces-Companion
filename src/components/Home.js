@@ -45,7 +45,7 @@ function Home(){
         //  console.log(dataHandle(temp.verdict)) ; 
         //  console.log(temp.languages) ; 
         //  console.log(submissionInfo.problem_index) ; 
-        //  console.log(submissionInfo) ; 
+        //  console.log(temp.tag_info) ; 
       }
  
     }
@@ -66,7 +66,7 @@ function Home(){
             { validHandle && submissionInfo && <Verdict verdictData={dataHandle(submissionInfo.verdict , "Verdict" , "Number")} handle={handle}/>}
             { validHandle && submissionInfo && <Language data={dataHandle(submissionInfo.languages , "Languages" , "Number")} handle={handle}/>}
             </InfoWrapper>
-            { validHandle && submissionInfo && <Tags tagsData={submissionInfo.tag_info} />}
+            { validHandle && submissionInfo && <Tags tagsData={dataHandle(submissionInfo.tag_info , "Tags" , "Number")} handle={handle} />}
         </>
 }
 
