@@ -41,8 +41,8 @@ return <Wrapper>
     <Chart
           chartType="PieChart"
           loader={<div>Loading Chart</div>}
-          height={'100%'} 
-          width={'100%'}
+          height={'450px'} 
+          width={'700px'}
           data={tagsData}
           options={{
               title : "Tags of " + handle , 
@@ -50,7 +50,7 @@ return <Wrapper>
             position: 'right',
             alignment: 'center',
             textStyle: {
-            fontSize: 12,
+            fontSize: 16,
             fontName: 'Roboto'
             }
             } , 

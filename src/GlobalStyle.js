@@ -19,6 +19,19 @@ body{
     background-color : var(--lightGrey) ; 
 
 }
+    ::-webkit-scrollbar{
+    width: 10px;
+    overflow: visible;
+    height : 10px ; 
+}
+::-webkit-scrollbar-thumb {
+  background: black; 
+ border-radius : 5px;   
+
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .expert{
     color : blue ; 
 }
