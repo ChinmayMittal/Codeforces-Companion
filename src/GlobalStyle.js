@@ -25,7 +25,7 @@ body{
     height : 10px ; 
 }
 ::-webkit-scrollbar-thumb {
-  background: black; 
+  background: var(--medGrey) ;  
  border-radius : 5px;   
 
 }

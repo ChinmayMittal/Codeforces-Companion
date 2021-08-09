@@ -36,13 +36,13 @@ const Tags = ({tagsData , handle}) => {
 //         }
 //         }}
 //     /></Wrapper>
-console.log(tagsData) ; 
+
 return <Wrapper>
     <Chart
           chartType="PieChart"
           loader={<div>Loading Chart</div>}
           height={'450px'} 
-          width={'700px'}
+          width={'650px'}
           data={tagsData}
           options={{
               title : "Tags of " + handle , 

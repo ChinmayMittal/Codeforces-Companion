@@ -41,7 +41,7 @@ function Home(){
         //  setVerdictData(temp.verdict) ; 
          let contestData = await fetchContestInfo(handle)  ; 
          contestData = contestHandler(contestData.result) ; 
-        //  console.log(verdictData)  ;
+         console.log(contestData)  ;
         //  console.log(dataHandle(temp.verdict)) ; 
         //  console.log(temp.languages) ; 
         //  console.log(submissionInfo.problem_index) ; 
