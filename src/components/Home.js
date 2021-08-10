@@ -13,6 +13,7 @@ import Tags from "./Tags" ;
 import Verdict from "./Verdict" ; 
 import Spinner from "./Spinner" ; 
 import Language from "./Language" ; 
+import ContestInfo from "./ContestInfo" ; 
 import {InfoWrapper} from "./Home.styles"
 
 function Home(){
@@ -23,6 +24,7 @@ function Home(){
     const [ ratingData , setRatingData ] = useState() ;  
     const [verdictData , setVerdictData ] = useState() ;
     const [loading , setLoading ] = useState(false) ;  
+    const [ contestData , setContestData ] = useState() ; 
     const getUserData  = async (handle) => { 
       setLoading(true) ; 
       // setValidHandle(true); 
@@ -39,9 +41,10 @@ function Home(){
          setRatingData(temp.rating) ;  
          setVerdictData(dataHandle(temp.verdict)) ; 
         //  setVerdictData(temp.verdict) ; 
-         let contestData = await fetchContestInfo(handle)  ; 
-         contestData = contestHandler(contestData.result) ; 
-         console.log(contestData)  ;
+         let tempContestData = await fetchContestInfo(handle)  ; 
+         tempContestData = contestHandler(tempContestData.result) ; 
+         setContestData(tempContestData) ;  
+        //  console.log(tempContestData)  ;
         //  console.log(dataHandle(temp.verdict)) ; 
         //  console.log(temp.languages) ; 
         //  console.log(submissionInfo.problem_index) ; 
@@ -67,6 +70,9 @@ function Home(){
             { validHandle && submissionInfo && <Language data={dataHandle(submissionInfo.languages , "Languages" , "Number")} handle={handle}/>}
             </InfoWrapper>
             { validHandle && submissionInfo && <Tags tagsData={dataHandle(submissionInfo.tag_info , "Tags" , "Number")} handle={handle} />}
+            <InfoWrapper>
+            { validHandle && contestData && <ContestInfo data={contestData} handle={handle} />}
+            </InfoWrapper>
         </>
 }
 
